@@ -91,11 +91,11 @@ const UserAdm = () => {
 
   return (
     <div className='user-adm'>
-      <div className="container">
+      <div className="container-adm">
         {/* Botões para exibir registros, clientes e médias mensais */}
         <div className="toggle-buttons">
           <button onClick={() => handleSectionToggle('records')} className="toggle-button">
-            Carros Cadastrados
+            Carros Ativos
           </button>
           <button onClick={() => handleSectionToggle('clients')} className="toggle-button">
             Usuários Cadastrados
@@ -118,7 +118,7 @@ const UserAdm = () => {
                   <p><strong>Placa:</strong> {record.plate}</p>
                   <p><strong>Estacionamento:</strong> {record.parking_name}</p>
                   <p><strong>Entrada:</strong> {new Date(record.entry_time).toLocaleString()}</p>
-                  <p><strong>Saída:</strong> {new Date(record.exit_time).toLocaleString()}</p>
+                  {/* <p><strong>Saída:</strong> {new Date(record.exit_time).toLocaleString()}</p> */}
                 </div>
               ))}
             </div>
