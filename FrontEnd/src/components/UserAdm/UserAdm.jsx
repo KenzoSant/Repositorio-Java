@@ -72,26 +72,25 @@ const UserAdm = () => {
     }
   };
 
-  useEffect(() => {
-    fetchRecords();
-    fetchClients();
-    fetchAverageMonths();
-  }, []);
-
   const handleSectionToggle = (section) => {
     if (activeSection === section) {
       setActiveSection(null); // Se a seção já estiver aberta, fecha
     } else {
       setActiveSection(section); // Caso contrário, abre a nova seção
+
+      // Chama a função de requisição adequada conforme a seção ativa
+      if (section === 'records') {
+        fetchRecords();  // Requisita os registros sempre que for abrir a seção
+      } else if (section === 'clients') {
+        fetchClients();  // Requisita os clientes sempre que for abrir a seção
+      } else if (section === 'average') {
+        fetchAverageMonths();  // Requisita as médias mensais sempre que for abrir a seção
+      }
     }
   };
 
   return (
     <div className='user-adm'>
-      <button onClick={logout} className="logout-button">
-        Logout
-      </button>
-
       <div className="container">
         {/* Botões para exibir registros, clientes e médias mensais */}
         <div className="toggle-buttons">
@@ -159,6 +158,10 @@ const UserAdm = () => {
           </div>
         )}
       </div>
+
+      <button onClick={logout} className="logout-button">
+        Logout
+      </button>
     </div>
   );
 };
