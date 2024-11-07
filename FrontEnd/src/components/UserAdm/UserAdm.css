@@ -5,7 +5,8 @@
 
 .logout-button {
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   background-color: #ff4d4d;
   color: white;
   border: none;
@@ -23,6 +24,13 @@
   gap: 20px;
 }
 
+.container p{
+  color: black;
+}
+.container p strong{
+  color: var(--second-color);
+}
+
 .toggle-buttons {
   display: flex;
   gap: 10px;
@@ -31,7 +39,7 @@
 .toggle-button {
   margin: 1rem 0 1rem 0;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #45a049;
   color: white;
   border: none;
   cursor: pointer;
